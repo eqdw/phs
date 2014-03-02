@@ -22,6 +22,6 @@ end
 get '/call' do
   CLIENT.account.calls.create(
     :from => ORIGIN,
-    :to   => PHONE_TO_LOCATE,
+    :to   => PHONE_TO_LOCATE
   )
 end
