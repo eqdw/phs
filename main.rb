@@ -23,6 +23,5 @@ get '/call' do
   CLIENT.account.calls.create(
     :from => ORIGIN,
     :to   => PHONE_TO_LOCATE,
-    :url  => "http://thawing-shore-7556.herokuapp.com/call_contents"
   )
 end
