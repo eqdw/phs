@@ -19,6 +19,12 @@ get '/call_contents' do
   end.text
 end
 
+post '/call_contents' do
+  Twilio::TwiML::Response.new do |r|
+    r.Say "I am trying to locate your phone. If you are hearing this, this means you found it"
+  end.text
+end
+
 get '/call' do
   CLIENT.account.calls.create(
     :from => ORIGIN,
