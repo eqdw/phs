@@ -2,9 +2,15 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.2)
+    coderay (1.0.9)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    method_source (0.8.2)
     multi_json (1.8.4)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -12,6 +18,7 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    slop (3.4.6)
     tilt (1.4.1)
     twilio-ruby (3.11.5)
       builder (>= 2.1.2)
@@ -22,5 +29,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   sinatra
   twilio-ruby
