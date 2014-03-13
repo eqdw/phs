@@ -2,6 +2,9 @@ require 'sinatra'
 require 'twilio-ruby'
 require './twilio_stub'
 
+def number(name) #looks up phone number for name in ENV
+  ENV[name]
+end
 
 class PHS #utility namespace
   def self.development?
@@ -37,9 +40,11 @@ post '/call_contents' do
 end
 
 get '/call' do
-  CLIENT.account.calls.create(
-    :from => ORIGIN,
-    :to   => PHONE_TO_LOCATE,
-    :url  => "http://thawing-shore-7556.herokuapp.com/call_contents"
-  )
+  if number(params[:name])
+    CLIENT.account.calls.create(
+      :from => ORIGIN,
+      :to   => number(params[:name]), 
+      :url  => "http://thawing-shore-7556.herokuapp.com/call_contents"
+    )
+  end
 end
