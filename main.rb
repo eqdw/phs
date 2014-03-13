@@ -45,7 +45,7 @@ post '/call' do
     CLIENT.account.calls.create(
       :from => ORIGIN,
       :to   => number(params[:name]), 
-      :url  => "http://thawing-shore-7556.herokuapp.com/call_contents"
+      :url  => "#{ENV['heroku_url']}/call_contents"
     )
   end
 end
