@@ -39,7 +39,7 @@ post '/call_contents' do
   end.text
 end
 
-get '/call' do
+post '/call' do
   puts "DEBUG: calling #{params[:name]} at #{number(params[:name])}"
   if number(params[:name])
     CLIENT.account.calls.create(
