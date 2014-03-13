@@ -9,25 +9,7 @@ class TwilioFactory
 end
 
 class MockTwilioClient
-
-  # this is so hacky
-  def account
-    act = Object.new
-
-    # WHAT HAVE I DONE
-    # I hate myself
-    def act.calls
-
-      # OH GOD WHY
-      cls = Object.new
-
-      def cls.create(opts={})
-        nil
-      end
-
-      cls
-    end
-
-    act
+  def method_missing(*args, &block)
+    self
   end
 end
