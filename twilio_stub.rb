@@ -1,7 +1,6 @@
 require 'pry'
 class TwilioFactory
   def self.get_client(sid, token)
-    binding.pry
     if PHS.development?
       MockTwilioClient.new
     else

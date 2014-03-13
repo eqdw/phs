@@ -18,7 +18,6 @@ ORIGIN          = "+16505294993" # twilio number
 ACCOUNT_SID = ENV['sid']
 AUTH_TOKEN  = ENV['token']
 
-binding.pry
 CLIENT = TwilioFactory.get_client(ACCOUNT_SID, AUTH_TOKEN)
 
 get '/' do
