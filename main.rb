@@ -2,14 +2,14 @@ require 'sinatra'
 require 'twilio-ruby'
 require './twilio_stub'
 
-@development =  !! ENV['development']
 
-def development?
-  @development
-end
-
-def production?
-  !development?
+class PHS #utility namespace
+  def self.development?
+    !! ENV['development']
+  end
+  def self.production?
+    !development?
+  end
 end
 
 PHONE_TO_LOCATE = "+16502753739" # 1.650.275.EQDW
@@ -18,6 +18,7 @@ ORIGIN          = "+16505294993" # twilio number
 ACCOUNT_SID = ENV['sid']
 AUTH_TOKEN  = ENV['token']
 
+binding.pry
 CLIENT = TwilioFactory.get_client(ACCOUNT_SID, AUTH_TOKEN)
 
 get '/' do
