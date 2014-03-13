@@ -40,6 +40,7 @@ post '/call_contents' do
 end
 
 get '/call' do
+  puts "DEBUG: calling #{params[:name]} at #{number(params[:name])}"
   if number(params[:name])
     CLIENT.account.calls.create(
       :from => ORIGIN,
